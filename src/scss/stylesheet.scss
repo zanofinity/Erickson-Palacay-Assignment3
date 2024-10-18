@@ -1,0 +1,104 @@
+/* Variables */
+$primary-color: #111111;
+$secondary-color: #787878;
+$hover-color: #999999;
+$font-body: 'Quando', sans-serif;
+$font-header: 'Josefin Sans', sans-serif;
+$font-size-base: 15px;
+$container-width: 94%;
+
+/* Mixins */
+@mixin transition($time) {
+    transition: $time;
+}
+
+@mixin responsive-container($width-percent) {
+    width: $width-percent;
+    margin: 0 auto;
+}
+
+
+body {
+    font-family: $font-body;
+    font-size: $font-size-base;
+    color: $secondary-color;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    margin-bottom: 25px;
+    line-height: 1.6em;
+}
+
+a {
+    font-weight: 400;
+    text-decoration: none;
+    color: $primary-color;
+    @include transition(0.20s);
+
+    &:hover {
+        color: $hover-color;
+    }
+}
+
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-family: $font-header;
+    font-weight: 400;
+    line-height: 1.3em;
+    word-wrap: break-word;
+    color: $primary-color;
+}
+
+h1 { 
+    font-size: 37px; 
+}
+
+h2 { 
+    font-size: 31px; 
+}
+h3 { 
+    font-size: 26px; 
+}
+h4 { 
+    font-size: 21px; 
+}
+h5 { 
+    font-size: 18px; 
+}
+h6 { 
+    font-size: 15px; 
+}
+
+
+.container {
+    @include responsive-container($container-width);
+}
+
+
+header {
+    font-family: $font-header;
+
+    nav {
+        ul {
+            display: none;
+        }
+    }
+}
+
+
+.top-logo {
+    width: 200px;
+    margin: 20px auto 40px;
+}
